@@ -1,17 +1,14 @@
 
-
-[![senli1073](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/senli1073)
-
-He is currently a Fellow in the Department of Earth and Planetary Sciences (EPS) at Harvard University.
+我是就读于浙江大学能源工程学院，过程装备与控制工程的一名大四学生，
+I am a senior student majoring in Process Equipment and Control Engineering at College of Energy Engineering, Zhejiang University. I work as a research intern in Institute of Advanced Equipment with PhD Keming Li(Academician Zheng Jinyang's team). My research interest includes FEA, Structural topology optimization, imperfections sensitivity.
 
 #### Contact
 
-Email: senli[at]fas.harvard.edu
+Email: 3039105707@qq.com\
+ahasac0928@proton.me
 
 #### Education
-M.E., Computer Science and Technology, China University of Mining and Technology, 2022—2025.\
-B.E., Data Science and Big Data Technology, China University of Mining and Technology, 2018—2022.
+Process Equipment and Control Engineering, Zhejiang University, China, 2022—Present.
 
 #### Research Interests
-Deep Learning, Artificial Intelligence Seismology, Mine Microseismic.
-
+Mechine Learning, Structural Topology Optimization, Imperfections Sensitivity, Fluid Mechanics.
