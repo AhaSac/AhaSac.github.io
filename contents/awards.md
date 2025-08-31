@@ -1,16 +1,3 @@
-
-- Outstanding Graduate Award (CUMT), 2025.
-
-- National Scholarship for Graduate Student, 2024.
-
-- First-Prize Scholarship (CUMT), 2024.
-
-- First-Prize Scholarship (CUMT), 2023.
-
-- Freshman Scholarship (CUMT), 2022.
-
-- Outstanding Graduation Project Award (Jiangsu Province), 2022.
-
-- First-Prize Enterprise Scholarship (CUMT), 2020.
-
-- First-Prize Scholarship (CUMT), 2019.
+· 军训一等嘉奖, 2022. 
+· 浙江大学第十七届大学生节能减排社会实践与科技竞赛三等奖, 2024. 
+· 第七届全国大学生网络文化节微视频作品征集活动优秀展播作品, 2024. 
