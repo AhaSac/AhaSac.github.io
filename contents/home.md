@@ -22,4 +22,3 @@ ahasac0928@proton.me
 
 #### 外压封头折减系数研究 The KDF of heads under external pressure
 外压封头折减系数研究论文参加了ASME PVP会议并收录至会议论文集，后续进一步修改准备投稿ASME期刊。在该项目中我在师兄指导下学习使用三维激光扫描仪及后续数据处理，掌握了Ansys的APDL二次开发，并嫁接了上一项目的批处理运行方法，实现了从建模分析到后处理，将数据提取至表格的全流程自动运行，大幅提升运算效率。
-Sun, J, Li, K, & Shen, T. "Improved Knock-Down Factors for the Design of Hemispherical, Torispherical and Ellipsoidal Heads Under External Pressure." Proceedings of the . Montreal, Quebec, Canada. July 20–25, 2025. V003T03A033. ASME. https://doi.org/10.1115/PVP2025-154406
