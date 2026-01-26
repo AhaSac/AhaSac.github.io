@@ -12,8 +12,20 @@ body {
 
 .header {
     background-color: #0d0d0d !important;
-    border-bottom: solid 2px #5b9ef7;
+    border-bottom: none;
     z-index: 10000;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #5b9ef7;
+    transition: width 0.1s ease-out;
+    width: var(--header-underline-width, 0%);
 }
 
 .header .navbar-brand,
@@ -34,6 +46,8 @@ body {
     padding: 10rem 0;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #333333;
     height: 25rem;
 }
 

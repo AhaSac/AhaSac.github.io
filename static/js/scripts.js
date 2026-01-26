@@ -24,6 +24,11 @@ window.addEventListener('DOMContentLoaded', event => {
         document.querySelectorAll('section header h2').forEach(title => {
             title.style.setProperty('--underline-width', underlineWidth + '%');
         });
+
+        const header = document.querySelector('.header');
+        if (header) {
+            header.style.setProperty('--header-underline-width', underlineWidth + '%');
+        }
     }
 
     window.addEventListener('scroll', updateTitleUnderlines);
