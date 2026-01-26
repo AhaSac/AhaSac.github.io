@@ -16,6 +16,18 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
+    // 标题下划线随滚动变化
+    function updateTitleUnderlines() {
+        const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        const underlineWidth = Math.min(scrollPercentage * 100, 100);
+        
+        document.querySelectorAll('section header h2').forEach(title => {
+            title.style.setProperty('--underline-width', underlineWidth + '%');
+        });
+    }
+
+    window.addEventListener('scroll', updateTitleUnderlines);
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(

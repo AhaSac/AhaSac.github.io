@@ -46,6 +46,20 @@ section header h2{
     color: var(--h-title-color);
     font-size: 2.3rem;
     line-height: 4rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section header h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--h-title-color), rgba(57, 72, 210, 0.3));
+    border-radius: 2px;
+    transition: width 0.1s ease-out;
+    width: var(--underline-width, 0%);
 }
 
 section .main-body{
