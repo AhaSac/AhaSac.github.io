@@ -14,7 +14,10 @@ body {
     background-color: #0d0d0d !important;
     border-bottom: none;
     z-index: 10000;
-    position: relative;
+    position: fixed !important;  /* 改为 fixed */
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .header::after {
