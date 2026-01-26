@@ -1,3 +1,3 @@
 #### Submitted
-Sun, J, Li, K, & Shen, T. "Improved Knock-Down Factors for the Design of Hemispherical, Torispherical and Ellipsoidal Heads Under External Pressure." Proceedings of the . Montreal, Quebec, Canada. July 20–25, 2025. V003T03A033. ASME. https://doi.org/10.1115/PVP2025-154406
-
+<u>Sun, J</u>, Li, K, & Shen, T. 
+[Improved Knock-Down Factors for the Design of Hemispherical, Torispherical and Ellipsoidal Heads Under External Pressure.](https://asmedigitalcollection.asme.org/PVP/proceedings-abstract/PVP2025/89060/V003T03A033/1224971)
