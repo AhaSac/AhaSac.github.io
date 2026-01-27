@@ -44,9 +44,18 @@ body {
     background-color: #0d0d0d;
 }
 
-.top-section {
-    width: 100%;
+.top-section{
+  position: relative;
+  width: 100%;
+  min-height: 25rem;          /* 别用固定 height 更稳 */
+  padding: 6rem 0 9rem;       /* 底部加大：给头像/链接留空间 */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #333;
+  overflow: hidden;           /* 防止内部溢出造成横向滚动 */
 }
+
 
 .top-section img {
     width: 100%;
@@ -140,52 +149,67 @@ section .main-body a:hover {
     margin-bottom: 3rem;
 }
 
-.profile-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+.profile-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* 关键：整体居中 */
+  gap: 3rem;
+  max-width: 900px;          /* 控制整体宽度，视觉更居中 */
+  margin: 0 auto;
 }
 
-/* 左侧联系方式 */
-.profile-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.profile-links{
+  min-width: 160px;          /* 防止链接区太窄导致布局怪 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
+
 
 .profile-links a {
-    color: #333;
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
     font-size: 1.1rem;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .profile-links a:hover {
-    color: #6f42c1; /* 和你渐变风格统一 */
+    color: #5b9ef7;
+    transform: translateX(4px); /* 轻微右移，很克制 */
 }
+
+
 
 /* 右侧头像 */
-#avatar {
-    flex-shrink: 0;
-}
+#avatar { flex-shrink: 0; }
 
-#avatar img {
-    width: clamp(130px, 16vw, 200px);
-    height: clamp(130px, 16vw, 200px);
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 5px 5px 5px rgba(0,0,0,.2);
-}
-
-.profile-section {
-    margin-top: -5rem;
+#avatar img{
+  width: clamp(130px, 16vw, 200px);
+  height: clamp(130px, 16vw, 200px);
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+  display: block;
 }
 
 
-@media screen and (max-width: 991px) {
-    #avatar {
-        margin: 0;
-    }
+.profile-section{
+  position: relative;
+  margin-top: -6rem;      /* 往上压到背景图上（可微调 -4~-8rem） */
+  background: transparent;/* 关键：别盖住背景图 */
+  z-index: 10;
+}
+
+
+@media (max-width: 768px){
+  .profile-wrapper{
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .profile-links{
+    align-items: center;
+    min-width: auto;
+  }
 }
 
 
