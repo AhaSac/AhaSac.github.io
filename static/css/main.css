@@ -46,12 +46,13 @@ body {
 
 .top-section {
     position: relative;
-    padding: 10rem 0;
-    background-position: center;
-    background-size: cover;
+    padding: 0;
+    background-position: center top;
+    background-size: contain;    /* 按比例缩放，完整显示 */
     background-repeat: no-repeat;
     background-color: #333333;
-    height: 25rem;
+    height: 720px;
+    width: 100%;
 }
 
 .top-section h2 {
