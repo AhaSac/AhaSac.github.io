@@ -46,12 +46,22 @@ body {
 
 .top-section {
     position: relative;
-    padding: 10rem 0;
+    padding: 0;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: #333333;
-    height: 720px;
+    height: 729px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-section .top-section-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
 }
 
 .top-section h2 {
