@@ -48,7 +48,7 @@ body {
     position: relative;
     padding: 0;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: #333333;
     width: 1920px;
