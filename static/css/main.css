@@ -135,21 +135,52 @@ section .main-body a:hover {
     background: rgba(0, 0, 0, 0.4);
 }
 
+.profile-section {
+    margin-top: -4rem;     /* 可选：往上贴一点背景 */
+    margin-bottom: 3rem;
+}
 
+.profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* 左侧联系方式 */
+.profile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.profile-links a:hover {
+    color: #6f42c1; /* 和你渐变风格统一 */
+}
+
+/* 右侧头像 */
 #avatar {
-    position: relative;
-    height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
-    max-width: 55em;
-    margin: 0 1.5rem 0 0;
-    float: right;
-    z-index: 9000;
+    flex-shrink: 0;
 }
 
 #avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    width: clamp(130px, 16vw, 200px);
+    height: clamp(130px, 16vw, 200px);
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.2);
 }
+
+.profile-section {
+    margin-top: -5rem;
+}
+
 
 @media screen and (max-width: 991px) {
     #avatar {
