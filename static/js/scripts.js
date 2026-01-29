@@ -7,6 +7,23 @@ const section_names = ['home', 'publications', 'awards']
 
 window.addEventListener('DOMContentLoaded', event => {
 
+    // 读取实际导航栏高度，写入 CSS 变量，避免顶部内容被 fixed header 压住裁剪
+    function syncNavHeight() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        const height = Math.ceil(header.getBoundingClientRect().height);
+        if (height > 0) {
+            document.documentElement.style.setProperty('--nav-height', `${height}px`);
+        }
+    }
+
+    syncNavHeight();
+    window.addEventListener('resize', syncNavHeight);
+    // 字体/布局晚一点稳定后再同步一次
+    setTimeout(syncNavHeight, 100);
+    setTimeout(syncNavHeight, 500);
+
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {

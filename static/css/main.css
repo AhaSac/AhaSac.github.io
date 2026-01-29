@@ -9,7 +9,7 @@
 body {
     background-color: #1a1a1a;
     color: #ffffff;
-    padding-top: var(--nav-height);
+    padding-top: 0;
 }
 
 /* 让锚点跳转时不被 fixed header 遮住 */
@@ -55,7 +55,7 @@ section[id], #page-top {
   position: relative;
   width: 100%;
   min-height: 25rem;          /* 别用固定 height 更稳 */
-    padding: clamp(2.5rem, 6vw, 4rem) 0 10rem; /* 适配首屏：避免必须下拉才能看到 */
+        padding: calc(var(--nav-height) + clamp(2.5rem, 6vw, 4rem)) 0 10rem; /* 顶部不留灰条，同时内容避开导航栏 */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -230,31 +230,33 @@ section .main-body a:hover {
     margin: 0;
 }
 
+/* 使用 profile-links 作为 Home 右侧联系方式，并横向排布 */
 #home .home-header .home-contacts{
     margin-left: auto;
 }
 
-/* Use provided profile-links markup in the Home header */
 #home .home-header .profile-links{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-end;
-    gap: 0.5rem 0.9rem;
+    gap: 0.6rem 1rem;
+    margin: 0;
+    min-width: 0;
 }
 
 #home .home-header .profile-links a{
     color: rgba(255,255,255,0.85);
     text-decoration: none;
     font-size: 1.05rem;
-    padding: 0.25rem 0.35rem;
-    border-radius: 0.5rem;
-    transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    line-height: 1.6;
+    white-space: nowrap;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 #home .home-header .profile-links a:hover{
     color: #5b9ef7;
-    background: rgba(255,255,255,0.06);
-    transform: translateY(-1px);
+    transform: translateX(2px);
 }
 
 @media (max-width: 768px){
