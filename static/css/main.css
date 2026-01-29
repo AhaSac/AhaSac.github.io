@@ -3,11 +3,18 @@
 
 :root{
     --h-title-color:#5b9ef7;
+    --nav-height: 72px;
 }
 
 body {
     background-color: #1a1a1a;
     color: #ffffff;
+    padding-top: var(--nav-height);
+}
+
+/* 让锚点跳转时不被 fixed header 遮住 */
+section[id], #page-top {
+    scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 .header {
@@ -48,7 +55,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 25rem;          /* 别用固定 height 更稳 */
-    padding: 6rem 0 10rem;      /* 底部留空间：保证头像完全在背景图内 */
+    padding: clamp(2.5rem, 6vw, 4rem) 0 10rem; /* 适配首屏：避免必须下拉才能看到 */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -206,7 +213,47 @@ section .main-body a:hover {
     margin-top: 0;
 }
 
+/* Home header: title left, contacts right */
+#home .home-header{
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+#home .home-header #home-subtitle{
+    margin: 0;
+}
+
+#home .home-header .home-contacts{
+    margin-left: auto;
+    justify-content: flex-end;
+    gap: 0.5rem 0.75rem;
+}
+
+#home .home-header .home-contacts .contact-link{
+    padding: 0.45rem 0.65rem;
+}
+
 @media (max-width: 768px){
+    #home .home-header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #home .home-header .home-contacts{
+        margin-left: 0;
+    }
+
+    #home .home-header .home-contacts .contact-link span{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    :root{
+        --nav-height: 64px;
+    }
+
     .top-section .top-avatar{
         right: 1rem;
         bottom: 1.25rem;
