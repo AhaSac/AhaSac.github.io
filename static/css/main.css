@@ -65,8 +65,10 @@ section[id], #page-top {
 
 .top-section .top-hero{
     position: relative;
+    margin-top: 4rem;
     padding-right: clamp(160px, 22vw, 260px);
 }
+
 
 /* 头像嵌入顶部背景图内部 */
 .top-section .top-avatar{
@@ -84,6 +86,10 @@ section[id], #page-top {
 .top-section .top-section-content {
     position: relative;
     z-index: 1;
+}
+
+section {
+    scroll-margin-top: 80px; /* header 高度 */
 }
 
 section header h2{
@@ -226,12 +232,29 @@ section .main-body a:hover {
 
 #home .home-header .home-contacts{
     margin-left: auto;
-    justify-content: flex-end;
-    gap: 0.5rem 0.75rem;
 }
 
-#home .home-header .home-contacts .contact-link{
-    padding: 0.45rem 0.65rem;
+/* Use provided profile-links markup in the Home header */
+#home .home-header .profile-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem 0.9rem;
+}
+
+#home .home-header .profile-links a{
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 1.05rem;
+    padding: 0.25rem 0.35rem;
+    border-radius: 0.5rem;
+    transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+#home .home-header .profile-links a:hover{
+    color: #5b9ef7;
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 768px){
@@ -242,10 +265,6 @@ section .main-body a:hover {
 
     #home .home-header .home-contacts{
         margin-left: 0;
-    }
-
-    #home .home-header .home-contacts .contact-link span{
-        display: none;
     }
 }
 
