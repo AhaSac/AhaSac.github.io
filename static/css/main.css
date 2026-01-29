@@ -48,7 +48,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 25rem;          /* 别用固定 height 更稳 */
-  padding: 6rem 0 9rem;       /* 底部加大：给头像/链接留空间 */
+    padding: 6rem 0 10rem;      /* 底部留空间：保证头像完全在背景图内 */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,11 +56,17 @@ body {
   overflow: hidden;           /* 防止内部溢出造成横向滚动 */
 }
 
+.top-section .top-hero{
+    position: relative;
+    padding-right: clamp(160px, 22vw, 260px);
+}
 
-.top-section img {
-    width: 100%;
-    height: auto;   /* 关键 */
-    display: block; /* 去掉底部空隙 */
+/* 头像嵌入顶部背景图内部 */
+.top-section .top-avatar{
+    position: absolute;
+    right: clamp(1rem, 4vw, 3rem);
+    bottom: clamp(1.5rem, 4vw, 3rem);
+    z-index: 2;
 }
 
 
@@ -144,45 +150,7 @@ section .main-body a:hover {
     background: rgba(0, 0, 0, 0.4);
 }
 
-.profile-section {
-    margin-top: -4rem;     /* 可选：往上贴一点背景 */
-    margin-bottom: 3rem;
-}
-
-.profile-wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;   /* 关键：整体居中 */
-  gap: 3rem;
-  max-width: 900px;          /* 控制整体宽度，视觉更居中 */
-  margin: 0 auto;
-}
-
-.profile-links{
-  min-width: 160px;          /* 防止链接区太窄导致布局怪 */
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-
-.profile-links a {
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.profile-links a:hover {
-    color: #5b9ef7;
-    transform: translateX(4px); /* 轻微右移，很克制 */
-}
-
-
-
-/* 右侧头像 */
-#avatar { flex-shrink: 0; }
-
+/* Avatar base style (used inside top-section) */
 #avatar img{
   width: clamp(130px, 16vw, 200px);
   height: clamp(130px, 16vw, 200px);
@@ -192,24 +160,57 @@ section .main-body a:hover {
   display: block;
 }
 
-
-.profile-section{
-  position: relative;
-  margin-top: -6rem;      /* 往上压到背景图上（可微调 -4~-8rem） */
-  background: transparent;/* 关键：别盖住背景图 */
-  z-index: 10;
+/* Contact section (below background) */
+.contact-section{
+    padding: 1.25rem 0 1.5rem;
+    background: transparent;
 }
 
+.contact-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    align-items: center;
+}
+
+.contact-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    transition: transform 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.contact-link:hover{
+    color: #5b9ef7;
+    border-color: rgba(91,158,247,0.45);
+    transform: translateY(-1px);
+}
+
+.contact-link i{
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.contact-link span{
+    font-size: 1.02rem;
+}
+
+/* Home markdown first line align nicer (remove top margin) */
+#home-md > :first-child{
+    margin-top: 0;
+}
 
 @media (max-width: 768px){
-  .profile-wrapper{
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .profile-links{
-    align-items: center;
-    min-width: auto;
-  }
+    .top-section .top-avatar{
+        right: 1rem;
+        bottom: 1.25rem;
+    }
 }
 
 

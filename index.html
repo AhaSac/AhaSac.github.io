@@ -152,9 +152,16 @@
         <div class="top-section-content">
             <!-- 顶部内容容器 -->
             <div class="container px-5">
-                <!-- 内容布局容器 -->
-                <h2 id="top-section-bg-text" class="text-white display-3 lh-1 font-alt"></h2>
-                <!-- 顶部背景文字占位 -->
+                <div class="top-hero">
+                    <!-- 内容布局容器 -->
+                    <h2 id="top-section-bg-text" class="text-white display-3 lh-1 font-alt"></h2>
+                    <!-- 顶部背景文字占位 -->
+
+                    <!-- 头像：嵌入背景图内部（通过 CSS 定位） -->
+                    <div id="avatar" class="top-avatar">
+                        <img class="shadow" src="static/assets/img/head2.jpg" alt="avatar">
+                    </div>
+                </div>
             </div>
             <!-- 内容容器结束 -->
         </div>
@@ -162,27 +169,24 @@
     </section>
     <!-- Top Section -->
 
-        <!-- Profile Section -->
-    <section class="profile-section">
+    <!-- Contact Section (below background image) -->
+    <section class="contact-section">
         <div class="container px-5">
-            <div class="profile-wrapper">
-
-                <!-- 左侧：联系方式 -->
-                <div class="profile-links">
-                    <a href="mailto:sunjiajun7737@outlook.com">📧 Email</a>
-                    <a href="https://github.com/AhaSac" target="_blank">🐙 GitHub</a>
-                    <a href="https://linkedin.com/in/yourname" target="_blank">💼 LinkedIn</a>
-                </div>
-
-                <!-- 右侧：头像 -->
-                <div id="avatar">
-                    <img class="shadow" src="static/assets/img/head2.jpg" alt="avatar">
-                </div>
-
+            <div class="contact-wrapper">
+                
+                <a class="contact-link" href="mailto:sunjiajun7737@outlook.com">
+                    <i class="bi bi-envelope-fill"></i><span>Email</span>
+                </a>
+                <a class="contact-link" href="https://github.com/AhaSac" target="_blank" rel="noreferrer">
+                    <i class="bi bi-github"></i><span>GitHub</span>
+                </a>
+                <a class="contact-link" href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer">
+                    <i class="bi bi-linkedin"></i><span>LinkedIn</span>
+                </a>
             </div>
         </div>
     </section>
-    <!-- Profile Section -->
+    <!-- Contact Section -->
 
     
     <!-- Home -->
