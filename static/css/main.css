@@ -64,7 +64,6 @@ section[id], #page-top {
 }
 
 .top-section .top-hero{
-    position: relative;
     margin-top: 4rem;
     padding-right: clamp(160px, 22vw, 260px);
 }
@@ -74,7 +73,7 @@ section[id], #page-top {
 .top-section .top-avatar{
     position: absolute;
     right: clamp(1rem, 4vw, 3rem);
-    bottom: clamp(1.5rem, 4vw, 3rem);
+    bottom: 0.5rem;
     z-index: 2;
 }
 
@@ -277,7 +276,7 @@ section .main-body a:hover {
 
     .top-section .top-avatar{
         right: 1rem;
-        bottom: 1.25rem;
+        bottom: 0.5rem;
     }
 }
 
