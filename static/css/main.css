@@ -73,7 +73,7 @@ section[id], #page-top {
 .top-section .top-avatar{
     position: absolute;
     right: clamp(1rem, 4vw, 3rem);
-    bottom: 0.5rem;
+    bottom: clamp(-2rem, 2vw, 1rem);
     z-index: 2;
 }
 
