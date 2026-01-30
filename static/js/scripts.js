@@ -1,9 +1,25 @@
 
 
 const content_dir = 'contents/'
-const config_file = 'config.yml'
 const section_names = ['home', 'publications', 'awards']
 
+// 语言状态管理
+let currentLanguage = localStorage.getItem('siteLang') || 'zh';
+
+function getConfigFile() {
+    return currentLanguage === 'en' ? 'config_en.yml' : 'config.yml';
+}
+
+function getMdFile(name) {
+    return currentLanguage === 'en' ? `${name}_en.md` : `${name}.md`;
+}
+
+function switchLanguage(lang) {
+    if (lang === currentLanguage) return;
+    currentLanguage = lang;
+    localStorage.setItem('siteLang', lang);
+    location.reload();
+}
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -65,7 +81,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
     // Yaml
-    fetch(content_dir + config_file)
+    fetch(content_dir + getConfigFile())
         .then(response => response.text())
         .then(text => {
             const yml = jsyaml.load(text);
@@ -84,7 +100,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Marked
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
-        fetch(content_dir + name + '.md')
+        fetch(content_dir + getMdFile(name))
             .then(response => response.text())
             .then(markdown => {
                 const html = marked.parse(markdown);
@@ -95,5 +111,21 @@ window.addEventListener('DOMContentLoaded', event => {
             })
             .catch(error => console.log(error));
     })
+
+    // 语言切换按钮
+    const enButton = document.querySelector('[data-lang="en"]');
+    if (enButton) {
+        enButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchLanguage('en');
+        });
+    }
+    const zhButton = document.querySelector('[data-lang="zh"]');
+    if (zhButton) {
+        zhButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchLanguage('zh');
+        });
+    }
 
 }); 

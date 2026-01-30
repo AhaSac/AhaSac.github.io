@@ -60,7 +60,7 @@ section[id], #page-top {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #333;
-  overflow: hidden;           /* 防止内部溢出造成横向滚动 */
+  overflow: visible;          /* 允许头像伸出边界 */
 }
 
 .top-section .top-hero{
@@ -73,7 +73,7 @@ section[id], #page-top {
 .top-section .top-avatar{
     position: absolute;
     right: clamp(1rem, 4vw, 3rem);
-    bottom: clamp(-2rem, 2vw, 1rem);
+    bottom: clamp(-120px, -12vw, -80px);
     z-index: 2;
 }
 
