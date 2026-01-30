@@ -72,7 +72,7 @@ section[id], #page-top {
 /* 头像嵌入顶部背景图内部 */
 .top-section .top-avatar{
     position: absolute;
-    right: clamp(1rem, 4vw, 3rem);
+    right: clamp(0.5rem, 4vw, 3rem);
     bottom: clamp(-120px, -12vw, -80px);
     z-index: 2;
 }

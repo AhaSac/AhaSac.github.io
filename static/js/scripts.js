@@ -7,11 +7,11 @@ const section_names = ['home', 'publications', 'awards']
 let currentLanguage = localStorage.getItem('siteLang') || 'zh';
 
 function getConfigFile() {
-    return currentLanguage === 'en' ? 'config_en.yml' : 'config.yml';
+    return `contents/${currentLanguage}/config.yml`;
 }
 
 function getMdFile(name) {
-    return currentLanguage === 'en' ? `${name}_en.md` : `${name}.md`;
+    return `contents/${currentLanguage}/${name}.md`;
 }
 
 function switchLanguage(lang) {
