@@ -71,11 +71,12 @@ section[id], #page-top {
 
 /* 头像嵌入顶部背景图内部 */
 .top-section .top-avatar{
-    position: absolute;
-    right: clamp(0.5rem, 4vw, 3rem);
-    bottom: clamp(-120px, -12vw, -80px);
-    z-index: 2;
+  position: absolute;
+  right: 220px;
+  bottom: -220px;
+  z-index: 2;
 }
+
 
 
 .top-section h2 {
@@ -275,7 +276,7 @@ section .main-body a:hover {
     }
 
     .top-section .top-avatar{
-        right: 1rem;
+        right: 3rem;
         bottom: 0.5rem;
     }
 }

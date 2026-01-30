@@ -7,11 +7,11 @@ const section_names = ['home', 'publications', 'awards']
 let currentLanguage = localStorage.getItem('siteLang') || 'zh';
 
 function getConfigFile() {
-    return `contents/${currentLanguage}/config.yml`;
+    return `${currentLanguage}/config.yml`;
 }
 
 function getMdFile(name) {
-    return `contents/${currentLanguage}/${name}.md`;
+    return `${currentLanguage}/${name}.md`;
 }
 
 function switchLanguage(lang) {
@@ -22,6 +22,24 @@ function switchLanguage(lang) {
 }
 
 window.addEventListener('DOMContentLoaded', event => {
+
+    // 根据当前语言显示/隐藏语言按钮，并更新导航文本
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    if (currentLanguage === 'zh') {
+        document.getElementById('lang-zh').style.display = 'none';
+        document.getElementById('lang-en').style.display = 'block';
+        if (navLinks.length >= 2) {
+            navLinks[0].textContent = '主页';
+            navLinks[1].textContent = '照片';
+        }
+    } else {
+        document.getElementById('lang-zh').style.display = 'block';
+        document.getElementById('lang-en').style.display = 'none';
+        if (navLinks.length >= 2) {
+            navLinks[0].textContent = 'HOME';
+            navLinks[1].textContent = 'PHOTO';
+        }
+    }
 
     // 读取实际导航栏高度，写入 CSS 变量，避免顶部内容被 fixed header 压住裁剪
     function syncNavHeight() {
