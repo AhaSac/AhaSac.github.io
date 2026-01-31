@@ -1,9 +1,28 @@
-@import "./styles.css";
+/* 项目卡片样式优化 */
+#projects .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
 
+#projects .card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
 
-:root{
-    --h-title-color:#5b9ef7;
-    --nav-height: 72px;
+#projects .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+#projects .card-body {
+    padding: 1rem;
+}
+
+#projects .card-title {
+    color: #5b9ef7;
+    margin-bottom: 0.5rem;
 }
 
 body {
@@ -214,6 +233,34 @@ section .main-body a:hover {
     font-size: 1.02rem;
 }
 
+/* 解决抽搐：固定图片比例 */
+.card-img-top {
+    width: 100%;
+    height: 200px; /* 固定高度 */
+    object-fit: cover; /* 确保图片不失真地填充 */
+    background-color: #f8f9fa;
+}
+
+/* 提升颜值：卡片悬停效果 */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* 去掉生硬的边框 */
+    border-radius: 12px; /* 圆角更现代 */
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px); /* 向上轻微浮动 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12) !important;
+}
+
+/* 按钮美化 */
+.btn-primary {
+    border-radius: 20px;
+    padding: 8px 20px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+}
 /* Home markdown first line align nicer (remove top margin) */
 #home-md > :first-child{
     margin-top: 0;

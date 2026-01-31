@@ -1,7 +1,7 @@
 
 
 const content_dir = 'contents/'
-const section_names = ['home', 'publications', 'awards']
+const section_names = ['home', 'publications', 'awards', 'photo']
 
 // 语言状态管理
 let currentLanguage = localStorage.getItem('siteLang') || 'zh';
@@ -24,22 +24,23 @@ function switchLanguage(lang) {
 window.addEventListener('DOMContentLoaded', event => {
 
     // 根据当前语言显示/隐藏语言按钮，并更新导航文本
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     if (currentLanguage === 'zh') {
         document.getElementById('lang-zh').style.display = 'none';
         document.getElementById('lang-en').style.display = 'block';
-        if (navLinks.length >= 2) {
-            navLinks[0].textContent = '主页';
-            navLinks[1].textContent = '照片';
-        }
     } else {
         document.getElementById('lang-zh').style.display = 'block';
         document.getElementById('lang-en').style.display = 'none';
-        if (navLinks.length >= 2) {
-            navLinks[0].textContent = 'HOME';
-            navLinks[1].textContent = 'PHOTO';
-        }
     }
+
+    // 统一设置导航栏为英文（除语言切换外）
+    const homeNav = document.getElementById('nav-home');
+    if (homeNav) homeNav.textContent = 'HOME';
+    
+    const projectNav = document.getElementById('nav-projects');
+    if (projectNav) projectNav.textContent = 'PROJECTS';
+    
+    const photoNav = document.getElementById('nav-photo');
+    if (photoNav) photoNav.textContent = 'PHOTO';
 
     // 读取实际导航栏高度，写入 CSS 变量，避免顶部内容被 fixed header 压住裁剪
     function syncNavHeight() {
