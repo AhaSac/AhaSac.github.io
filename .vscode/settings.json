@@ -3,6 +3,7 @@
         "/^python -m http\\.server 8000$/": {
             "approve": true,
             "matchCommandLine": true
-        }
+        },
+        "D:/doc/JiajunSun.github.io-main/AhaSac.github.io/.venv/Scripts/python.exe": true
     }
 }

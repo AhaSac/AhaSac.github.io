@@ -36,9 +36,6 @@ window.addEventListener('DOMContentLoaded', event => {
     const homeNav = document.getElementById('nav-home');
     if (homeNav) homeNav.textContent = 'HOME';
     
-    const projectNav = document.getElementById('nav-projects');
-    if (projectNav) projectNav.textContent = 'PROJECTS';
-    
     const photoNav = document.getElementById('nav-photo');
     if (photoNav) photoNav.textContent = 'PHOTO';
 
@@ -73,6 +70,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
         const underlineWidth = Math.min(scrollPercentage * 100, 100);
         
+        
         document.querySelectorAll('section header h2').forEach(title => {
             title.style.setProperty('--underline-width', underlineWidth + '%');
         });
@@ -105,12 +103,10 @@ window.addEventListener('DOMContentLoaded', event => {
         .then(text => {
             const yml = jsyaml.load(text);
             Object.keys(yml).forEach(key => {
-                try {
-                    document.getElementById(key).innerHTML = yml[key];
-                } catch {
-                    console.log("Unknown id and value: " + key + "," + yml[key].toString())
+                const targetElement = document.getElementById(key);
+                if (targetElement) {
+                    targetElement.innerHTML = yml[key];
                 }
-
             })
         })
         .catch(error => console.log(error));
@@ -119,16 +115,19 @@ window.addEventListener('DOMContentLoaded', event => {
     // Marked
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
-        fetch(content_dir + getMdFile(name))
-            .then(response => response.text())
-            .then(markdown => {
-                const html = marked.parse(markdown);
-                document.getElementById(name + '-md').innerHTML = html;
-            }).then(() => {
-                // MathJax
-                MathJax.typeset();
-            })
-            .catch(error => console.log(error));
+        const targetElement = document.getElementById(name + '-md');
+        if (targetElement) {
+            fetch(content_dir + getMdFile(name))
+                .then(response => response.text())
+                .then(markdown => {
+                    const html = marked.parse(markdown);
+                    targetElement.innerHTML = html;
+                }).then(() => {
+                    // MathJax
+                    MathJax.typeset();
+                })
+                .catch(error => console.log(error));
+        }
     })
 
     // 语言切换按钮
