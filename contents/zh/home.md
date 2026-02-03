@@ -75,7 +75,7 @@
     </ul>
   </div>
   <div class="md-media-media">
-    <img src="static/assets/img/home4.png" alt="home4">
+    <img src="static/assets/img/home4.webp" alt="home4">
   </div>
 </div>
 
